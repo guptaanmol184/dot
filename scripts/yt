@@ -7,7 +7,14 @@ case "$1" in
 		youtube-dl --extract-audio --audio-format mp3 $2
 		;;
 	*)
-		echo "Help"
+		cat << EOF
+		Usage: $0 [options] URL
+
+		-h | --help           Display this help.
+
+		-m |-music            Download the song as a mp3 file and save it in the current directory
+EOF
+
 		exit 1
 		;;
 esac
