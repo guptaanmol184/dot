@@ -3,7 +3,7 @@ allow_bold = true
 #audible_bell = false
 #clickable_url = true
 #dynamic_title = true
-font = Hurmit Nerd Font 12
+font = Hack Nerd Font Mono:style=Regular 12
 #fullscreen = true
 #geometry = 640x480
 #icon_name = terminal
@@ -49,12 +49,10 @@ scrollback_lines = -1
 #background = #3f3f3f
 
 # 20% background transparency (requires a compositor)
-#background = rgba(63, 63, 63, 0.8)
+background = rgba(63, 63, 63, 0.7)
 
 # If unset, will reverse foreground and background
 highlight = #2f2f2f
-
-[colors]
 
 # special
 foreground      = #d0d0d0
