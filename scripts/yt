@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+echo Hello $1
+
+case "$1" in
+	-m)
+		youtube-dl --extract-audio --audio-format mp3 $2
+		;;
+	*)
+		echo "Help"
+		exit 1
+		;;
+esac
