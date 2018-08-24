@@ -36,6 +36,9 @@ bindsym $mod+Return exec termite
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# lock screen
+bindsym $mod+Shift+x exec i3lock-wrapper
+
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -182,3 +185,11 @@ exec --no-startup-id nm-applet
 # set wallpaper
 exec --no-startup-id feh --bg-scale ~/walls/kobe/kobe-2.jpg
 exec --no-startup-id compton -c -b
+
+# Speacial keys
+bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 1+ unmute"
+bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 1- unmute"
+bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
+
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
