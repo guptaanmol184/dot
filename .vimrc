@@ -5,3 +5,5 @@ set sw=4
 set noexpandtab
 
 syntax on
+
+set number
