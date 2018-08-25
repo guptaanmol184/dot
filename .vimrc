@@ -6,4 +6,7 @@ set noexpandtab
 
 syntax on
 
+set hlsearch
+set incsearch
+
 set number
