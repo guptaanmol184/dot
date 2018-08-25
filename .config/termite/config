@@ -49,7 +49,7 @@ cursor_shape = underline
 #background = #3f3f3f
 
 # 20% background transparency (requires a compositor)
-background = rgba(63, 63, 63, 0.7)
+# background = rgba(63, 63, 63, 0.7)
 
 # If unset, will reverse foreground and background
 highlight = #2f2f2f
@@ -58,7 +58,7 @@ highlight = #2f2f2f
 foreground      = #d0d0d0
 foreground_bold = #d0d0d0
 cursor          = #d0d0d0
-background      = #000000
+background      = #212121
 
 # black
 color0  = #000000
