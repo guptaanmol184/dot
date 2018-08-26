@@ -91,7 +91,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+p focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -165,7 +165,17 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
+# Application launch mode
+mode "AppLaunch" {
+        # These bindings trigger as soon as you enter the resize mode
+		bindsym w exec google-chrome-stable
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+a mode "AppLaunch"
+}
+bindsym $mod+a mode "AppLaunch"
 
 # Windows and border customisation
 # Needed for i3-gaps
