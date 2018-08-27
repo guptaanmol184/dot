@@ -171,7 +171,7 @@ mode "resize" {
 # Application launch mode
 mode "AppLaunch" {
         # These bindings trigger as soon as you enter the resize mode
-		bindsym w exec google-chrome-stable
+		bindsym w exec vivaldi-stable
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
