@@ -41,7 +41,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 
 # lock screen
-bindsym $mod+Shift+x exec i3lock-wrapper
+bindsym $mod+Shift+x exec $HOME/.config/i3/lock/glitchlock.sh
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -83,7 +83,7 @@ bindsym $mod+n split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+#bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -173,10 +173,10 @@ mode "AppLaunch" {
         # These bindings trigger as soon as you enter the resize mode
 		bindsym w exec vivaldi-stable
 
-        # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+a mode "AppLaunch"
+		bindsym Caps_Lock mode "default"
+        bindsym $mod+a mode "default"
 }
 bindsym $mod+a mode "AppLaunch"
 
@@ -209,4 +209,3 @@ bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
 
 bindsym Print exec scrot
-
