@@ -172,11 +172,15 @@ mode "resize" {
 # Application launch mode
 mode "AppLaunch" {
         # These bindings trigger as soon as you enter the resize mode
-		bindsym w exec vivaldi-stable
+        bindsym w exec vivaldi-stable
+        bindsym f exec thunar
+        bindsym t exec trello
+        bindsym n exec /opt/Tusk/tusk-app
 
+
+        bindsym x mode "default"
         bindsym Return mode "default"
         bindsym Escape mode "default"
-		bindsym Caps_Lock mode "default"
         bindsym $mod+a mode "default"
 }
 bindsym $mod+a mode "AppLaunch"
@@ -210,3 +214,5 @@ bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
 
 bindsym Print exec scrot
+
+bindsym $mod+s exec vivaldi-stable
