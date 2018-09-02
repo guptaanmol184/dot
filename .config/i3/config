@@ -42,7 +42,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 
 # lock screen
-bindsym $mod+Shift+x exec $HOME/.config/i3/lock/glitchlock.sh
+bindsym $mod+Shift+x exec i3lock-wrapper
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
