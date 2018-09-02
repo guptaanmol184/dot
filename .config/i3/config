@@ -201,6 +201,7 @@ bindsym $mod+b bar mode toggle
 
 # Startup applications
 exec --no-startup-id nm-applet
+exec --no-startup-id aw-qt
 # set wallpaper
 exec --no-startup-id feh --bg-scale ~/.config/i3/wallpaper.jpg
 exec --no-startup-id compton -c -b
