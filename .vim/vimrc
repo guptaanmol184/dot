@@ -204,6 +204,9 @@ set sts=4
 set sw=4
 set noexpandtab
 
+" set the leader key
+let mapleader=" "
+
 " Switch to a plugin manager
 call plug#begin('~/.vim/plugged')
 
@@ -213,11 +216,47 @@ call plug#begin('~/.vim/plugged')
 " Help tags for vim-plug
 Plug 'junegunn/vim-plug'
 Plug 'luochen1990/rainbow'
+Plug 'joshdick/onedark.vim'
+Plug 'romainl/Apprentice'
+Plug 'tpope/vim-commentary'
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 " plugin options
+" enable rainbow
 let g:rainbow_active = 1
+" Easy motion DEFAULT SUGGESTED 
+" Easy motion end here
+" let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+nmap s <Plug>(easymotion-overwin-f)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+" nmap s <Plug>(easymotion-overwin-f2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+" plugin options end here
+
+if (has("termguicolors"))
+    set termguicolors
+endif
+
+" Inefficient solution to background erase problem
+colorscheme onedark
+" vim hardcodes background color erase even if the terminfo file does
+" not contain bce (not to mention that libvte based terminals
+" incorrectly contain bce in their terminfo files). This causes
+" incorrect background rendering when using a color theme with a
+" background color.
+let &t_ut=''
 
 filetype on
 syntax enable
@@ -246,11 +285,6 @@ set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
 set nolist
 
 set colorcolumn=90
-
-" set the leader key
-let mapleader=" "
-
-map <leader>s :source ~/.vimrc<CR>
 
 " not sure about the usefullness of this option but trying
 set hidden
