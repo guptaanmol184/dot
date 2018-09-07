@@ -172,7 +172,7 @@ mode "resize" {
 # Application launch mode
 mode "AppLaunch" {
         # These bindings trigger as soon as you enter the resize mode
-        bindsym w exec vivaldi-stable
+        bindsym w exec google-chrome-stable
         bindsym f exec thunar
         bindsym t exec trello
         bindsym n exec /opt/Tusk/tusk-app
