@@ -35,6 +35,7 @@ fi
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
 xrandr --dpi 96
+xset r rate 200 35 
 
 numlockx &
 exec i3
