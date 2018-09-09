@@ -280,7 +280,7 @@ set laststatus=2
 
 set scrolloff=5
 
-set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
+set listchars=eol:¬,tab:·\ ,trail:.
 " disable list by default
 set nolist
 
@@ -293,5 +293,7 @@ set history=200
 set showmatch
 
 " Boost edit-compile-edit cycle
-map <F9> :w<CR>:make<Space>%.out<CR>
-map <F5> :vertical botright term ./%.out<CR>
+" map <F9> :w<CR>:make<Space>%.out<CR>
+" map <F5> :vertical botright term ./%.out<CR>
+map <Leader>c :w<CR>:make<Space>%.out<CR>
+map <Leader>x :vertical botright term ./%.out<CR>
