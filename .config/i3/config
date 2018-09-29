@@ -14,7 +14,6 @@ set $alt Mod1
 
 # Set default layout
 workspace_layout tabbed
-workspace_auto_back_and_forth yes
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -174,9 +173,6 @@ mode "AppLaunch" {
         # These bindings trigger as soon as you enter the resize mode
         bindsym w exec google-chrome-stable
         bindsym f exec thunar
-        bindsym t exec trello
-        bindsym n exec /opt/Tusk/tusk-app
-
 
         bindsym x mode "default"
         bindsym Return mode "default"
@@ -187,20 +183,41 @@ bindsym $mod+a mode "AppLaunch"
 
 # Windows and border customisation
 # Needed for i3-gaps
-for_window [class="^.*"] border pixel 5
-gaps outer 4
-gaps inner 5
+for_window [class="^.*"] border pixel 1
+gaps outer 0
+gaps inner 2
+
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
+#bar {
+#        status_command i3status
+#        # Obey Fitts's law for comfort
+#        tray_padding 0
+#}
 bar {
-        status_command i3status
+    i3bar_command i3bar -t
+    font pango:DejaVu Sans Mono, FontAwesome 9
+    status_command i3status-rs $HOME/.config/i3/status.toml
+    colors {
+        separator #666666
+        background #2a2a2a00
+        statusline #dddddd
+        focused_workspace #0088CC #0088CC #ffffff
+        active_workspace #333333 #333333 #ffffff
+        inactive_workspace #333333 #333333 #888888
+        urgent_workspace #2f343a #900000 #ffffff
+    }
+    # Obey Fitts's law for comfort
+    tray_padding 0
+    height 19
 }
 # toggle i3bar
 bindsym $mod+b bar mode toggle
 
 # Startup applications
 exec --no-startup-id nm-applet
+exec --no-startup-id aw-qt
 # set wallpaper
 exec --no-startup-id feh --bg-scale ~/.config/i3/wallpaper.jpg
 exec --no-startup-id compton -c -b
@@ -214,5 +231,3 @@ bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
 
 bindsym Print exec scrot
-
-bindsym $mod+s exec vivaldi-stable

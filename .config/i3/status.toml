@@ -1,0 +1,57 @@
+theme = "slick"
+icons = "awesome"
+
+[[block]]
+block = "uptime"
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "disk_space"
+path = "/"
+alias = "/"
+info_type = "available"
+unit = "GB"
+interval = 60
+warning = 20.0
+alert = 10.0
+show_percentage = true
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{Mup}%"
+format_swap = "{SUp}%"
+
+[[block]]
+block = "cpu"
+interval = 1
+
+[[block]]
+block = "load"
+interval = 1
+format = "{1m}"
+
+[[block]]
+block = "net"
+device = "eno1"
+ip = false
+speed_up = false
+interval = 1
+
+[[block]]
+block = "net"
+device = "wlo1"
+speed_up = false
+interval = 1
+
+[[block]]
+block = "time"
+interval = 60
+format = "%a %d %b %R"
+
+[[block]]
+block = "battery"
+interval = 10
+format = "{percentage}% {time}"
