@@ -1,0 +1,7 @@
+bf	~/.bmfiles
+bd	~/.bmdirs
+cfb	~/.bashrc
+cfv	~/.config/nvim/init.vim
+cfi	~/.config/i3/config
+cft	~/.config/termite/config
+cfp	~/.config/polybar/config
