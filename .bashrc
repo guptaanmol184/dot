@@ -49,7 +49,6 @@ if [[ $iatest > 0 ]]; then bind "set completion-ignore-case on"; fi
 if [[ $iatest > 0 ]]; then bind "set show-all-if-ambiguous On"; fi
 
 # Set the default editor
-export EDITOR=nano
 export VISUAL=nano
 alias pico='edit'
 alias spico='sedit'
@@ -62,13 +61,13 @@ export LS_COLORS='no=00:fi=00:di=00;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40
 #export GREP_OPTIONS='--color=auto'
 
 # Color for manpages in less makes manpages a little easier to read
-export LESS_TERMCAP_mb=$'\E[01;31m'
-export LESS_TERMCAP_md=$'\E[01;31m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_so=$'\E[01;44;33m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[01;32m'
+export LESS_TERMCAP_mb=$'\E[01;31m'    # begin bold
+export LESS_TERMCAP_md=$'\E[01;31m'    # begin blink
+export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
+export LESS_TERMCAP_se=$'\E[0m'        # begin reverse video
+export LESS_TERMCAP_so=$'\E[01;44;33m' # reset reverse video
+export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
+export LESS_TERMCAP_us=$'\E[01;32m'    # begin underline
 
 #######################################################
 # MACHINE SPECIFIC ALIAS'S
@@ -124,9 +123,10 @@ alias svi='sudo vi'
 alias vis='vim "+set si"'
 
 # Custom Alias's to some commands
-alias pacman='sudo pacman'
-alias e='nvim'
-alias vim='nvim'
+alias p='sudo pacman'
+alias e="$EDITOR"
+alias s="sudo $EDITOR"
+alias g='git'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Change directory aliases
@@ -145,7 +145,7 @@ alias rmd='/bin/rm  --recursive --force --verbose '
 
 # Alias's for multiple directory listing commands
 alias la='ls -Alh' # show hidden files
-alias ls='ls -Fh --color=always' # add colors and file type extensions
+alias ls='ls --color=auto' # add colors and file type extensions
 alias lx='ls -lXBh' # sort by extension
 alias lk='ls -lSrh' # sort by size
 alias lc='ls -lcrh' # sort by change time
