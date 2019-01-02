@@ -4,6 +4,7 @@
 # Adds `~/.scripts` and all subdirectories to $PATH
 export PATH="$HOME/.scripts:$PATH"
 export EDITOR="nvim"
+export VISUAL="nvim"
 export TERMINAL="termite"
 export BROWSER="firefox"
 export READER="zathura"
