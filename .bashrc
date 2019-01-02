@@ -124,6 +124,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # Youtube
 alias yt="youtube-dl --add-metadata -ic" # Download video link
 alias yta="yt -x -f bestaudio/best" # Download only audio
+alias ytp="yt -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
 
 # Change directory aliases
 alias home='cd ~'
