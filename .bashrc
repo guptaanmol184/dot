@@ -116,12 +116,16 @@ alias svi='sudo vi'
 alias vis='vim "+set si"'
 
 # Custom Alias's to some commands
-alias p='sudo pacman'
+alias p='pacman'
+alias sp='sudo pacman'
 alias e="$EDITOR"
-alias s="sudo $EDITOR"
+alias se="sudo $EDITOR"
+alias vim='nvim'
 alias g='git'
 alias dot='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias gdot='sudo /usr/bin/git --git-dir=/.dot/ --work-tree=/'
 alias wm='sudo wifi-menu'
+alias rfs='~/frozensynapse/runSynapse.sh'
 # Youtube
 alias yt="youtube-dl --add-metadata -ic" # Download video link
 alias yta="yt -x -f bestaudio/best" # Download only audio
