@@ -17,6 +17,9 @@ elif [ -f /etc/bash_completion ]; then
 	. /etc/bash_completion
 fi
 
+# Load shortcut aliases
+[ -f "$HOME/.shortcuts" ] && source "$HOME/.shortcuts"
+
 #######################################################
 # EXPORTS
 #######################################################
@@ -87,9 +90,6 @@ alias web='cd /var/www/html'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-# Edit this .bashrc file
-alias ebrc="$EDITOR ~/.bashrc"
-
 # Source this .bashrc file
 alias sbrc='source ~/.bashrc'
 
@@ -120,7 +120,8 @@ alias p='sudo pacman'
 alias e="$EDITOR"
 alias s="sudo $EDITOR"
 alias g='git'
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias dot='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias wm='sudo wifi-menu'
 # Youtube
 alias yt="youtube-dl --add-metadata -ic" # Download video link
 alias yta="yt -x -f bestaudio/best" # Download only audio
@@ -135,7 +136,7 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
 # cd into the old directory
-alias bd='cd "$OLDPWD"'
+alias pd='cd "$OLDPWD"'
 
 # Remove a directory and all files
 alias rmd='/bin/rm  --recursive --force --verbose '
@@ -168,7 +169,7 @@ alias 777='chmod -R 777'
 alias h="history | grep "
 
 # Search running processes
-alias p="ps aux | grep "
+alias pg="ps aux | grep "
 alias topcpu="/bin/ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10"
 
 # Search files in the current folder
@@ -698,3 +699,5 @@ function __setprompt
 	PS4='\[${DARKGRAY}\]+\[${NOCOLOR}\] '
 }
 PROMPT_COMMAND='__setprompt'
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
