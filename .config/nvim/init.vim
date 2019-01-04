@@ -43,3 +43,9 @@ call plug#end()
 
 " When shortcut files are updated, renew bash and ranger configs with new material:
 	autocmd BufWritePost ~/.bmfiles,~/.bmdirs !shortcuts
+
+" Run xrdb whenever Xdefaults or Xresources are updated.
+	autocmd BufWritePost ~/.Xresources,~/.Xdefaults !xrdb %
+
+" GRAPHICAL OPTIONS
+	set background=light
