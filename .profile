@@ -9,6 +9,11 @@ export TERMINAL="termite"
 export BROWSER="firefox"
 export READER="zathura"
 
+# XDG environment variables
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_DATA_HOME="$HOME/.local/share"
+
 # less/man colors
 export LESS=-R
 export LESS_TERMCAP_mb=$'\E[01;31m'    # begin bold
