@@ -25,6 +25,8 @@ exec --no-startup-id dunst
 # Composite manager:
 exec --no-startup-id compton -c -b
 
+
+# #---Bar Config---# #
 bar {
         status_command i3status
         font pango:Source Code Pro 10
