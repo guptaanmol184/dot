@@ -85,7 +85,7 @@ alias web='cd /var/www/html'
 # GENERAL ALIAS'S
 #######################################################
 # To temporarily bypass an alias, we preceed the command with a \
-	# EG: the ls command is aliased, but to use the normal ls command you would type \ls
+# EG: the ls command is aliased, but to use the normal ls command you would type \ls
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -293,20 +293,20 @@ cpp()
 	set -e
 	strace -q -ewrite cp -- "${1}" "${2}" 2>&1 \
 		| awk '{
-	count += $NF
-	if (count % 10 == 0) {
-		percent = count / total_size * 100
-		printf "%3d%% [", percent
-		for (i=0;i<=percent;i++)
-			printf "="
-			printf ">"
-			for (i=percent;i<100;i++)
-				printf " "
-				printf "]\r"
+			count += $NF
+			if (count % 10 == 0) {
+				percent = count / total_size * 100
+				printf "%3d%% [", percent
+				for (i=0;i<=percent;i++)
+					printf "="
+					printf ">"
+					for (i=percent;i<100;i++)
+						printf " "
+						printf "]\r"
+					}
 			}
-		}
-	END { print "" }' total_size=$(stat -c '%s' "${1}") count=0
-}
+		END { print "" }' total_size=$(stat -c '%s' "${1}") count=0
+	}
 
 # Copy and go to the directory
 cpg ()
@@ -704,5 +704,3 @@ function __setprompt
 	PS4='\[${DARKGRAY}\]+\[${NOCOLOR}\] '
 }
 PROMPT_COMMAND='__setprompt'
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
