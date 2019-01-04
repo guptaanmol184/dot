@@ -14,6 +14,8 @@ call plug#end()
 " Enable autocompletion:
 	set wildmenu
 	set wildmode=list:longest,full
+" Disable cursor styling because it messes up the cursor
+	set guicursor=
 " Enable mouse
 	set mouse=a
 " Search options
