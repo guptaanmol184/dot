@@ -22,6 +22,11 @@ call plug#end()
 	set hlsearch
 	set incsearch
 	set smartcase
+" Tab settings
+	set tabstop=4
+	set softtabstop=4
+	set shiftwidth=4
+    set expandtab
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
@@ -38,12 +43,11 @@ call plug#end()
 	vnoremap <C-c> "+y
 	map <C-p> "+P
 
+" AUTOCOMMANDS
 " Automatically deletes all trailing whitespace on save.
 	autocmd BufWritePre * %s/\s\+$//e
-
 " When shortcut files are updated, renew bash and ranger configs with new material:
 	autocmd BufWritePost ~/.bmfiles,~/.bmdirs !shortcuts
-
 " Run xrdb whenever Xdefaults or Xresources are updated.
 	autocmd BufWritePost ~/.Xresources,~/.Xdefaults !xrdb %
 
