@@ -2,7 +2,7 @@ let mapleader =" "
 
 call plug#begin('~/.vim/plugged')
 Plug 'mboughaba/i3config.vim'
-Plug 'vimwiki/vimwiki'
+"Plug 'vimwiki/vimwiki'
 call plug#end()
 
 " Some basics:

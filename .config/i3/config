@@ -28,62 +28,62 @@ exec --no-startup-id compton -c -b
 
 # #---Bar Config---# #
 bar {
-        status_command i3status
-        font pango:Source Code Pro 10
-     	tray_padding 0
+    status_command i3status
+    font pango:Source Code Pro 10
+    tray_padding 0
 }
 
 # #---Basic Bindings---# #
 bindsym $mod+Return 		exec $term
 
 bindsym $mod+Shift+space 	floating toggle
-bindsym $mod+space		focus mode_toggle 
+bindsym $mod+space          focus mode_toggle
 
-bindsym $mod+Escape		workspace prev
+bindsym $mod+Escape		    workspace prev
 bindsym $mod+Shift+Escape 	exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # #---Letter Key Bindings---# #
-bindsym $mod+q			[con_id="__focused__" instance="^(?!dropdowncalc|tmuxdd).*$"] kill
+bindsym $mod+q			    [con_id="__focused__" instance="^(?!dropdowncalc|tmuxdd).*$"] kill
 bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!dropdowncalc|tmuxdd).*$"] kill
 
-bindsym $mod+w		exec --no-startup-id $BROWSER
+bindsym $mod+w		        exec --no-startup-id $BROWSER
 
-bindsym $mod+t			split toggle
+bindsym $mod+t			    split toggle
 bindsym $mod+Shift+t		gaps inner current set 15; gaps outer current set 15
 
-bindsym $mod+s			gaps inner current plus 5
+bindsym $mod+s			    gaps inner current plus 5
 bindsym $mod+Shift+s		gaps inner current minus 5
 
-bindsym $mod+d			exec --no-startup-id dmenu_run -l 9 -f -i -p 'Run: ' -fn 'Source Code Pro'
+bindsym $mod+d			    exec --no-startup-id dmenu_run -l 9 -f -i -p 'Run: ' -fn 'Source Code Pro'
 bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
 
-bindsym $mod+f			fullscreen toggle
+bindsym $mod+f			    fullscreen toggle
 
-bindsym $mod+g			workspace prev
+bindsym $mod+g			    workspace prev
 
-bindsym $mod+h			focus left
+bindsym $mod+h			    focus left
 bindsym $mod+Shift+h		move left 30
 
-bindsym $mod+j			focus down
+bindsym $mod+j			    focus down
 bindsym $mod+Shift+j		move down 30
 
-bindsym $mod+k			focus up
+bindsym $mod+k			    focus up
 bindsym $mod+Shift+k		move up 30
 
-bindsym $mod+l			focus right
+bindsym $mod+l			    focus right
 bindsym $mod+Shift+l		move right 30
 
-bindsym $mod+z			gaps outer current plus 5
+bindsym $mod+z			    gaps outer current plus 5
 bindsym $mod+Shift+z		gaps outer current minus 5
 
-bindsym $mod+x			exec --no-startup-id i3lock -B=sigma
+bindsym $mod+x			    exec --no-startup-id i3lock -B=sigma
 
-bindsym $mod+b			bar mode toggle
+bindsym $mod+b			    bar mode toggle
 
 # #---Workspace Bindings---# #
-bindsym $mod+Tab		workspace back_and_forth
+bindsym $mod+Tab		    workspace back_and_forth
 bindsym $mod+apostrophe		split horizontal ;; exec $term
-bindsym $mod+slash		split vertical ;; exec $term
+bindsym $mod+slash		    split vertical ;; exec $term
 bindsym $mod+Shift+slash	kill
 bindsym $mod+backslash		workspace back_and_forth
 
@@ -123,10 +123,10 @@ bindsym $mod+Shift+9	move container to workspace $ws9
 bindsym $mod+Shift+0	move container to workspace $ws10
 
 # #---Arrow Keys---# #
-bindsym $mod+Left		focus left
-bindsym $mod+Down		focus down
-bindsym $mod+Up			focus up
-bindsym $mod+Right 		focus right
+bindsym $mod+Left		    focus left
+bindsym $mod+Down		    focus down
+bindsym $mod+Up			    focus up
+bindsym $mod+Right 		    focus right
 bindsym $mod+Shift+Left		move left
 bindsym $mod+Shift+Down		move down
 bindsym $mod+Shift+Up		move up
