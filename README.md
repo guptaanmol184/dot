@@ -1,4 +1,4 @@
-# Anmol's dotfiles
+# dotfiles
 
 ## Collection of programs
 
@@ -6,4 +6,3 @@
 - bash
 - neovim
 - termite
-
