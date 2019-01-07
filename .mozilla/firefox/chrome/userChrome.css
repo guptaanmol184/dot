@@ -1,0 +1,19 @@
+/* Frank edited file - you are good to go...*/
+
+/*
+ * Do not remove the @namespace line -- it's required for correct functioning
+ */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
+
+/* https://news.ycombinator.com/item?id=18836189 */
+/* Hide tab bar in FF Quantum */
+@-moz-document url("chrome://browser/content/browser.xul") {
+    #TabsToolbar {
+        visibility: collapse !important;
+        margin-bottom: 21px !important;
+    }
+
+    #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+        visibility: collapse !important;
+    }
+}
