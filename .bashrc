@@ -124,6 +124,11 @@ alias po='pacman -Qo'
 alias pi='pacman -Qi'
 alias psyu='sudo pacman -Syu'
 
+# Youtube
+alias yt="youtube-dl --add-metadata -ic" # Download video link
+alias yta="yt -x -f bestaudio/best" # Download only audio
+alias ytp="yt -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
+
 # Custom Alias's to some commands
 alias e="$EDITOR"
 alias se="sudo $EDITOR"
@@ -133,10 +138,7 @@ alias dot='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias gdot='sudo /usr/bin/git --git-dir=/.dot/ --work-tree=/'
 alias wm='sudo wifi-menu'
 alias rfs='~/frozensynapse/runSynapse.sh'
-# Youtube
-alias yt="youtube-dl --add-metadata -ic" # Download video link
-alias yta="yt -x -f bestaudio/best" # Download only audio
-alias ytp="yt -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
+alias cn='sudo connman_dmenu'
 
 # Change directory aliases
 alias home='cd ~'
