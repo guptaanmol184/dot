@@ -1,8 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 # Original: http://frexx.de/xterm-256-notes/
 #           http://frexx.de/xterm-256-notes/data/colortable16.sh
 # Modified by Aaron Griffin
 # and further by Kazuo Teramoto
+
+# A simple script to display the 16 colors color palette
 
 
 FGNAMES=(' black ' '  red  ' ' green ' ' yellow' '  blue ' 'magenta' '  cyan ' ' white ')
