@@ -116,12 +116,15 @@ alias vi='vim'
 alias svi='sudo vi'
 alias vis='vim "+set si"'
 
-# Custom Alias's to some commands
+# pacman alias's
 alias p='pacman'
 alias sp='sudo pacman'
 alias pl='pacman -Ql'
 alias po='pacman -Qo'
 alias pi='pacman -Qi'
+alias psyu='sudo pacman -Syu'
+
+# Custom Alias's to some commands
 alias e="$EDITOR"
 alias se="sudo $EDITOR"
 alias vim='nvim'
