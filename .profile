@@ -8,6 +8,7 @@ export VISUAL="nvim"
 export TERMINAL="termite"
 export BROWSER="firefox"
 export READER="zathura"
+export SUDO_ASKPASS="$HOME/.scripts/dmenupass"
 
 # XDG environment variables
 export XDG_CONFIG_HOME="$HOME/.config"

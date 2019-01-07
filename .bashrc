@@ -138,7 +138,7 @@ alias dot='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias gdot='sudo /usr/bin/git --git-dir=/.dot/ --work-tree=/'
 alias wm='sudo wifi-menu'
 alias rfs='~/frozensynapse/runSynapse.sh'
-alias cn='sudo connman_dmenu'
+alias cn='sudo -A connman_dmenu'
 
 # Change directory aliases
 alias home='cd ~'
