@@ -46,45 +46,45 @@ cursor_shape = underline
 
 # 20% background transparency (requires a compositor)
 # background = rgba(63, 63, 63, 0.7)
-
 [colors]
+
 # special
-foreground      = #fdfdfd
-foreground_bold = #fdfdfd
-cursor          = #fdfdfd
-background      = #1d1f28
+foreground      = #d0d0d0
+foreground_bold = #d0d0d0
+cursor          = #d0d0d0
+background      = #1c1c1c
 
 # black
-color0  = #282a36
-color8  = #414458
+color0  = #121212
+color8  = #0a0a0a
 
 # red
-color1  = #f37f97
-color9  = #ff4971
+color1  = #d78787
+color9  = #df8787
 
 # green
-color2  = #5adecd
-color10 = #18e3c8
+color2  = #afd787
+color10 = #afdf87
 
 # yellow
-color3  = #f2a272
-color11 = #ff8037
+color3  = #f7f7af
+color11 = #ffffaf
 
 # blue
-color4  = #8897f4
-color12 = #556fff
+color4  = #87afd7
+color12 = #87afdf
 
 # magenta
-color5  = #c574dd
-color13 = #b043d1
+color5  = #d7afd7
+color13 = #dfafdf
 
 # cyan
-color6  = #79e6f3
-color14 = #3fdcee
+color6  = #afd7d7
+color14 = #afdfdf
 
 # white
-color7  = #fdfdfd
-color15 = #bebec1
+color7  = #e6e6e6
+color15 = #eeeeee
 
 [hints]
 #font = Monospace 12
