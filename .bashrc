@@ -139,6 +139,7 @@ alias gdot='sudo /usr/bin/git --git-dir=/.dot/ --work-tree=/'
 alias wm='sudo wifi-menu'
 alias rfs='~/frozensynapse/runSynapse.sh'
 alias cn='sudo -A connman_dmenu'
+alias z='zathura --fork'
 
 # Change directory aliases
 alias home='cd ~'
@@ -603,7 +604,8 @@ function __setprompt
 	local LIGHTGRAY="\033[0;37m"
 	local WHITE="\033[1;37m"
 	local BLACK="\033[0;30m"
-	local DARKGRAY="\033[1;30m"
+	#local DARKGRAY="\033[1;30m"
+	local DARKGRAY="\033[1;34m"
 	local RED="\033[0;31m"
 	local LIGHTRED="\033[1;31m"
 	local GREEN="\033[0;32m"
