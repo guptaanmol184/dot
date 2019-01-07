@@ -24,7 +24,8 @@ exec_always --no-startup-id feh --bg-scale ~/.config/i3/wall.jpg
 exec --no-startup-id dunst
 # Composite manager:
 exec --no-startup-id compton -c -b
-
+# Connection Manager
+exec --no-startup-id connman-notify
 
 # #---Bar Config---# #
 bar {
