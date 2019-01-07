@@ -9,8 +9,8 @@
 # #---Basic Definitions---# #
 # Needed for i3-gaps
 for_window [class="^.*"] border pixel 1
-gaps inner 5
-gaps outer 5
+gaps inner 0
+gaps outer 0
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
 set $alt Mod1
@@ -81,6 +81,10 @@ bindsym $mod+x			    exec --no-startup-id i3lock -B=sigma
 
 bindsym $mod+b			    bar mode toggle
 
+bindsym $mod+Shift+c        reload
+
+bindsym $mod+Shift+r        restart
+
 # #---Workspace Bindings---# #
 bindsym $mod+Tab		    workspace back_and_forth
 bindsym $mod+apostrophe		split horizontal ;; exec $term
@@ -140,10 +144,3 @@ bindsym XF86AudioRaiseVolume    exec amixer set Master -q 5%+
 bindsym XF86AudioLowerVolume    exec amixer set Master -q 5%-
 bindsym XF86MonBrightnessDown   exec --no-startup-id "lux -s3%"
 bindsym XF86MonBrightnessUp     exec --no-startup-id "lux -a5%"
-
-# Set default layout
-
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
