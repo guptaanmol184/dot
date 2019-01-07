@@ -6,3 +6,4 @@
 - bash
 - neovim
 - termite
+- firefox
