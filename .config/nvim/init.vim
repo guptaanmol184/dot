@@ -1,12 +1,5 @@
 let mapleader =" "
 
-call plug#begin('~/.vim/plugged')
-Plug 'mboughaba/i3config.vim'
-"Plug 'vimwiki/vimwiki'
-Plug 'farmergreg/vim-lastplace'
-Plug 'vim-scripts/xoria256.vim'
-call plug#end()
-
 " Some basics:
 	set nocompatible
 	filetype plugin on
@@ -52,6 +45,8 @@ call plug#end()
 	autocmd BufWritePost ~/.bmfiles,~/.bmdirs !shortcuts
 " Run xrdb whenever Xdefaults or Xresources are updated.
 	autocmd BufWritePost ~/.Xresources,~/.Xdefaults !xrdb %
+
+source ~/.config/nvim/plugs.vim    "plugins
 
 " GRAPHICAL OPTIONS
 	set background=dark
