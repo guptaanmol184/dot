@@ -19,7 +19,7 @@ workspace_layout tabbed
 
 # #---Starting External Scripts---# #
 # Setting the background:
-exec_always --no-startup-id feh --bg-scale ~/.config/i3/wall.jpg
+exec_always --no-startup-id feh --bg-max ~/.config/i3/wall
 # Starts dunst for notifications:
 exec --no-startup-id dunst
 # Composite manager:
