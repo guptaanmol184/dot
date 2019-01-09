@@ -1,0 +1,3 @@
+#!/bin/bash
+# iq(1) Internet Query: Check internet status by pinging to google.com
+ping -q -w1 -W2 -c1 google.com > /dev/null && echo ok || echo error
