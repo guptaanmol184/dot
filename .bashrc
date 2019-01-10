@@ -140,6 +140,8 @@ alias wm='sudo wifi-menu'
 alias rfs='~/frozensynapse/runSynapse.sh'
 alias cn='sudo -A connman_dmenu'
 alias z='zathura --fork'
+alias g='git'
+alias cc='gcc -Wall'
 
 # Change directory aliases
 alias home='cd ~'
@@ -260,7 +262,7 @@ sedit ()
 }
 
 # Extracts any archive(s) (if unp isn't installed)
-extract () {
+x () {
 	for archive in $*; do
 		if [ -f $archive ] ; then
 			case $archive in
