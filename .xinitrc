@@ -36,7 +36,7 @@ xrandr --auto
 xrandr --dpi 96
 
 # decrease the key repeat delay
-xset r rate 220 35
+# xset r rate 200 30
 
 numlockx &
 exec i3
