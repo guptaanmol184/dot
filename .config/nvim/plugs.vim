@@ -1,4 +1,13 @@
+" ale Options
+let g:ale_linters = {
+\   'python': ['pyflakes', 'pyls'],
+\	'c': ['gcc'],
+\   'sh': ['shellcheck'],
+\}
+let g:ale_completion_enabled=1
+set completeopt=menu,menuone,preview,noselect,noinsert
 
+" plugins
 call plug#begin('~/.vim/plugged')
 
     "Plug 'vimwiki/vimwiki'
@@ -9,6 +18,7 @@ call plug#begin('~/.vim/plugged')
     " utility plugins
         Plug 'farmergreg/vim-lastplace'
         Plug 'easymotion/vim-easymotion'
+        "Plug 'ervandew/supertab'
 
     " programming plugins
         Plug 'tpope/vim-commentary'
@@ -18,10 +28,3 @@ call plug#begin('~/.vim/plugged')
         Plug 'vim-scripts/xoria256.vim'
 
 call plug#end()
-
-" ale Options
-let g:ale_linters = {
-\   'python': ['pyflakes'],
-\	'c': ['gcc'],
-\   'sh': ['shellcheck'],
-\}
