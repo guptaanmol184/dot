@@ -19,6 +19,8 @@ call plug#begin('~/.vim/plugged')
         Plug 'farmergreg/vim-lastplace'
         Plug 'easymotion/vim-easymotion'
         "Plug 'ervandew/supertab'
+        Plug 'luochen1990/rainbow'
+
 
     " programming plugins
         Plug 'tpope/vim-commentary'
