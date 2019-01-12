@@ -18,12 +18,6 @@ elif [ -f /etc/bash_completion ]; then
 	. /etc/bash_completion
 fi
 
-# Load shortcut aliases
-[ -f "$HOME/.shortcuts" ] && source "$HOME/.shortcuts"
-
-# get fasd working
-eval "$(fasd --init auto)"
-
 #######################################################
 # EXPORTS
 #######################################################
@@ -720,3 +714,14 @@ function __setprompt
 	PS4='\[${DARKGRAY}\]+\[${NOCOLOR}\] '
 }
 PROMPT_COMMAND='__setprompt'
+
+#######################################################
+# SOURCED ALIAS'S AND SCRIPTS - POST BASHRC
+#######################################################
+
+# Get fasd working
+eval "$(fasd --init auto)"
+
+# Load shortcut aliases
+[ -f "$HOME/.shortcuts" ] && source "$HOME/.shortcuts"
+
