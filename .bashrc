@@ -21,6 +21,9 @@ fi
 # Load shortcut aliases
 [ -f "$HOME/.shortcuts" ] && source "$HOME/.shortcuts"
 
+# get fasd working
+eval "$(fasd --init auto)"
+
 #######################################################
 # EXPORTS
 #######################################################
@@ -115,6 +118,7 @@ alias freshclam='sudo freshclam'
 alias vi='vim'
 alias svi='sudo vi'
 alias vis='vim "+set si"'
+alias q='exit'
 
 # pacman alias's
 alias p='pacman'
@@ -139,7 +143,7 @@ alias gdot='sudo /usr/bin/git --git-dir=/.dot/ --work-tree=/'
 alias wm='sudo wifi-menu'
 alias rfs='~/frozensynapse/runSynapse.sh'
 alias cn='sudo -A connman_dmenu'
-alias z='zathura --fork'
+alias za='zathura --fork'
 alias g='git'
 alias cc='gcc -Wall'
 
