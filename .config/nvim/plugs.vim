@@ -20,7 +20,8 @@ call plug#begin('~/.vim/plugged')
         Plug 'easymotion/vim-easymotion'
         "Plug 'ervandew/supertab'
         Plug 'luochen1990/rainbow'
-
+            let g:rainbow_active = 1
+        Plug 'Yggdroot/indentLine'
 
     " programming plugins
         Plug 'tpope/vim-commentary'
