@@ -7,3 +7,4 @@
 - neovim
 - termite
 - firefox
+- mpd/ncmpcpp
