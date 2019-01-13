@@ -3,5 +3,6 @@ bd	~/.bmdirs
 cfb	~/.bashrc
 cfv	~/.config/nvim/init.vim
 cfi	~/.config/i3/config
+cfm ~/.config/mpd/mpd.conf
+cfn ~/.config/ncmpcpp/config
 cft	~/.config/termite/config
-cfp	~/.config/polybar/config

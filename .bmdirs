@@ -1,8 +1,8 @@
 # You can add comments to these files with #
 h	~/
-d	~/Documents
 D	~/Downloads
 cf	~/.config
 ss	~/.scripts
-mn	/mnt
-md      /media/data
+md  /media/data
+s   /media/s8
+mu  /media/data/audio
