@@ -26,6 +26,10 @@ exec --no-startup-id dunst
 exec --no-startup-id compton -c -b
 # Connection Manager
 exec --no-startup-id connman-notify
+# Redshift
+exec --no-startup-id redshift
+# mpd
+exec --no-startup-id mpd
 
 # #---Bar Config---# #
 bar {
