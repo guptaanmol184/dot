@@ -113,6 +113,7 @@ alias vi='vim'
 alias svi='sudo vi'
 alias vis='vim "+set si"'
 alias q='exit'
+alias m='ncmpcpp'
 
 # pacman alias's
 alias p='pacman'
@@ -124,8 +125,8 @@ alias psyu='sudo pacman -Syu'
 
 # Youtube
 alias yt="youtube-dl --add-metadata -ic" # Download video link
-alias yta="yt -x -f bestaudio/best" # Download only audio
-alias ytp="yt -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'"
+alias yta='yt --extract-audio --audio-format mp3 --output "%(title)s.%(ext)s"' # Download only audio
+alias ytp="yt -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'" # Download playlist with numbering
 
 # Custom Alias's to some commands
 alias e="$EDITOR"
