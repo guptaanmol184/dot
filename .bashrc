@@ -113,7 +113,6 @@ alias vi='vim'
 alias svi='sudo vi'
 alias vis='vim "+set si"'
 alias q='exit'
-alias m='ncmpcpp'
 
 # pacman alias's
 alias p='pacman'
@@ -133,14 +132,25 @@ alias e="$EDITOR"
 alias se="sudo $EDITOR"
 alias vim='nvim'
 alias g='git'
-alias dot='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias gdot='sudo /usr/bin/git --git-dir=/.dot/ --work-tree=/'
 alias wm='sudo wifi-menu'
 alias rfs='~/frozensynapse/runSynapse.sh'
 alias cn='sudo -A connman_dmenu'
 alias za='zathura --fork'
 alias g='git'
 alias cc='gcc -Wall'
+alias m='ncmpcpp'
+
+# dot files management aliases
+alias dot='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias dots='dot status'
+alias dota='dot add -p'
+alias dotc='dot commit -m'
+alias dotp='dot push origin'
+alias gdot='sudo git --git-dir=/.dot/ --work-tree=/'
+alias gdots='gdot status'
+alias gdota='gdot add'
+alias gdotc='gdot commit -m'
+alias gdotp='gdot push origin'
 
 # Change directory aliases
 alias home='cd ~'
