@@ -35,7 +35,7 @@ markup=none
 # See the script for details.
 [volume]
 label=VOL
-#label=♪
+label=♪
 instance=Master
 #instance=PCM
 interval=once
@@ -49,12 +49,12 @@ label=MEM
 separator=false
 interval=30
 
-[memory]
-label=SWAP
-instance=swap
-separator=false
-interval=30
-
+# [memory]
+# label=SWAP
+# instance=swap
+# separator=false
+# interval=30
+#
 # Disk usage
 #
 # The directory defaults to $HOME if the instance is not specified.
@@ -69,29 +69,32 @@ interval=30
 #
 # If the instance is not specified, use the interface used for default route.
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
+
+#[wifi]
 [iface]
-#instance=wlan0
+instance=wlo1
+interval=10
+color=#00FF00
+separator=false
+
+[iface]
+instance=eno1
 color=#00FF00
 interval=10
-separator=false
+#separator=false
 
-[wifi]
-#instance=wlp3s0
-interval=10
-separator=false
-
-[bandwidth]
-#instance=eth0
-interval=5
-
+# [bandwidth]
+# #instance=eth0
+# interval=5
+#
 # CPU usage
 #
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
-[cpu_usage]
-label=CPU
-interval=10
-min_width=CPU: 100.00%
+#[cpu_usage]
+#label=CPU
+#interval=10
+#min_width=CPU: 100.00%
 #separator=false
 
 #[load_average]
@@ -101,8 +104,8 @@ min_width=CPU: 100.00%
 #
 # The battery instance defaults to 0.
 [battery]
-label=BAT
-#label=⚡
+#label=BAT
+label=⚡
 #instance=1
 interval=30
 
@@ -151,3 +154,7 @@ interval=5
 #instance=NUM
 #interval=once
 #signal=11
+
+[fuzzytime]
+command=fuzzyclock
+interval=30
