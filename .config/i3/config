@@ -30,6 +30,8 @@ exec --no-startup-id connman-notify
 exec --no-startup-id redshift
 # mpd
 exec --no-startup-id mpd
+# musnify-mpd ~ mpd notification daemon
+exec --no-startup-id musnify-mpd
 
 # #---Bar Config---# #
 bar {
@@ -143,7 +145,7 @@ bindsym $mod+Shift+Right 	move right
 
 # #---Extra XF86 Keys---# #
 # These are the extra media keys that some keyboards have.
-bindsym XF86AudioMute           exec amixer -q sset Master,0 toggle
+bindsym XF86AudioMute           exec "amixer -q sset Master,0 toggle"
 bindsym XF86AudioRaiseVolume    exec amixer set Master -q 5%+
 bindsym XF86AudioLowerVolume    exec amixer set Master -q 5%-
 bindsym XF86MonBrightnessDown   exec --no-startup-id "lux -s3%"
