@@ -37,7 +37,7 @@ exec --no-startup-id musnify-mpd
 
 # #---Bar Config---# #
 bar {
-    status_command i3status
+    status_command i3blocks
     font pango:Source Code Pro 10
     tray_padding 0
 }
