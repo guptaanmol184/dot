@@ -1,21 +1,33 @@
 #!/bin/bash
 iatest=$(expr index "$-" i)
 shopt -s autocd #Allows you to cd into directory merely by typing the directory name.
+PROMPT_COMMAND='__setprompt' # initialize this first
 
 #######################################################
 # SOURCED ALIAS'S AND SCRIPTS
 #######################################################
 
 # Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
+# if [ -f /etc/bashrc ]; then
+# 	. /etc/bashrc
+# fi
 
 # Enable bash programmable completion features in interactive shells
 if [ -f /usr/share/bash-completion/bash_completion ]; then
 	. /usr/share/bash-completion/bash_completion
 elif [ -f /etc/bash_completion ]; then
 	. /etc/bash_completion
+fi
+
+# Load shortcut aliases
+[ -f "$HOME/.shortcuts" ] && source "$HOME/.shortcuts"
+
+# Get fasd working
+# fasd by default messes up exit status of last command
+# add this only after PROMPT_COMMAND is initialized
+# eval "$(fasd --init auto)"
+if [[ -f "$HOME/.fasd-init-bash" ]]; then
+    source .fasd-init-bash # use custom fasd-init so that we can set PROMPT_COMMAND properly, and capture last status
 fi
 
 #######################################################
@@ -734,21 +746,15 @@ function __setprompt
 
 	# PS2 is used to continue a command using the \ character
 	PS2="\[${DARKGRAY}\]>\[${NOCOLOR}\] "
+
 	# PS3 is used to enter a number choice in a script
 	#PS3='Please enter a number from above list: '
 
 	# PS4 is used for tracing a script in debug mode
     #PS4='\[${DARKGRAY}\]($0:$LINENO) +\[${NOCOLOR}\] '
 }
-PROMPT_COMMAND='__setprompt'
 
-#######################################################
-# SOURCED ALIAS'S AND SCRIPTS - POST BASHRC
-#######################################################
-
-# Get fasd working
-eval "$(fasd --init auto)"
-
-# Load shortcut aliases
-[ -f "$HOME/.shortcuts" ] && source "$HOME/.shortcuts"
+# if [ -z "$BASH_EXECUTION_STRING" ] && [ "$SHLVL" -eq 3 ]; then
+#     exec fish
+# fi
 
