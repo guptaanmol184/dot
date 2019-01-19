@@ -49,10 +49,10 @@ shopt -s checkwinsize
 
 # Causes bash to append to history instead of overwriting it so if you start a new terminal, you have old session history
 shopt -s histappend
-PROMPT_COMMAND='history -a'
+#PROMPT_COMMAND='history -a'
 
 # Allow ctrl-S for history navigation (with ctrl-R)
-stty -ixon
+# stty -ixon
 
 # Ignore case on auto-completion
 # Note: bind used instead of sticking these in .inputrc
@@ -128,6 +128,7 @@ alias vi='vim'
 alias svi='sudo vi'
 alias vis='vim "+set si"'
 alias q='exit'
+alias cpu="grep 'cpu ' /proc/stat | awk '{usage=(\$2+\$4)*100/(\$2+\$4+\$5)} END {print usage}' | awk '{printf(\"%.1f\n\", \$1)}'"
 
 # pacman alias's
 alias p='pacman'
@@ -622,7 +623,6 @@ trim()
 # Set the ultimate amazing command prompt
 #######################################################
 
-alias cpu="grep 'cpu ' /proc/stat | awk '{usage=(\$2+\$4)*100/(\$2+\$4+\$5)} END {print usage}' | awk '{printf(\"%.1f\n\", \$1)}'"
 function __setprompt
 {
 	local LAST_COMMAND=$? # Must come first!
