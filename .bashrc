@@ -715,6 +715,17 @@ function __setprompt
 	# Skip to the next line
 	PS1+="\n"
 
+    # Hmm, this will add the working dricertory to the title of the terminal
+    # source: http://tldp.org/HOWTO/Xterm-Title-4.html
+    # extra: https://stackoverflow.com/questions/5076127/bash-update-terminal-title-by-running-a-second-command/5080670#5080670
+    # (saved for future)
+    # only if the terminal is a xterm, or derivative
+    if [[ $TERM =~ xterm.* ]]; then
+        #PS1+="\[\033]0;(\j) \u@\h: \w\007\]"
+        PS1+="\[\033]0;(\j):\w\007\]" #\[ .. \] denote non-printable characters - set title
+    fi
+
+
 	if [[ $EUID -ne 0 ]]; then
 		PS1+="\[${GREEN}\]>\[${NOCOLOR}\] " # Normal user
 	else
@@ -723,7 +734,6 @@ function __setprompt
 
 	# PS2 is used to continue a command using the \ character
 	PS2="\[${DARKGRAY}\]>\[${NOCOLOR}\] "
-
 	# PS3 is used to enter a number choice in a script
 	#PS3='Please enter a number from above list: '
 
