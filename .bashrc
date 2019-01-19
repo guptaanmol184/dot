@@ -146,6 +146,7 @@ alias dots='dot status'
 alias dota='dot add -p'
 alias dotc='dot commit -m'
 alias dotp='dot push origin'
+alias dotd='dot diff'
 alias gdot='sudo git --git-dir=/.dot/ --work-tree=/'
 alias gdots='gdot status'
 alias gdota='gdot add'
@@ -674,17 +675,18 @@ function __setprompt
 	fi
 
 	# Date
-	PS1+="\[${DARKGRAY}\](\[${CYAN}\]\$(date +%a) $(date +%b-'%-m')" # Date
-	PS1+="${BLUE} $(date +'%-I':%M:%S%P)\[${DARKGRAY}\])-" # Time
+	# PS1+="\[${DARKGRAY}\](\[${CYAN}\]\$(date +%a) $(date +%b-'%_d')" # Date
+	# PS1+="${BLUE} $(date +'%-I':%M:%S%P)\[${DARKGRAY}\])-" # Time
 
 	# CPU
-	PS1+="(\[${MAGENTA}\]CPU $(cpu)%"
+	# PS1+="(\[${MAGENTA}\]CPU $(cpu)%"
 
 	# Jobs
-	PS1+="\[${DARKGRAY}\]:\[${MAGENTA}\]\j"
+	#PS1+="\[${DARKGRAY}\]:\[${MAGENTA}\]\j"
+	PS1+="\[${DARKGRAY}\](${MAGENTA}\]\j"
 
 	# Network Connections (for a server - comment out for non-server)
-	PS1+="\[${DARKGRAY}\]:\[${MAGENTA}\]Net $(awk 'END {print NR}' /proc/net/tcp)"
+	#PS1+="\[${DARKGRAY}\]:\[${MAGENTA}\]Net $(awk 'END {print NR}' /proc/net/tcp)"
 
 	PS1+="\[${DARKGRAY}\])-"
 
@@ -698,13 +700,14 @@ function __setprompt
 	fi
 
 	# Current directory
-	PS1+="\[${DARKGRAY}\]:\[${BROWN}\]\w\[${DARKGRAY}\])-"
+	#PS1+="\[${DARKGRAY}\]:\[${BROWN}\]\w\[${DARKGRAY}\])-"
+	PS1+="\[${DARKGRAY}\]:\[${BROWN}\]\w\[${DARKGRAY}\])"
 
 	# Total size of files in current directory
-	PS1+="(\[${GREEN}\]$(/bin/ls -lah | /bin/grep -m 1 total | /bin/sed 's/total //')\[${DARKGRAY}\]:"
+	#PS1+="(\[${GREEN}\]$(/bin/ls -lah | /bin/grep -m 1 total | /bin/sed 's/total //')\[${DARKGRAY}\]:"
 
 	# Number of files
-	PS1+="\[${GREEN}\]\$(/bin/ls -A -1 | /usr/bin/wc -l)\[${DARKGRAY}\])"
+	#PS1+="\[${GREEN}\]\$(/bin/ls -A -1 | /usr/bin/wc -l)\[${DARKGRAY}\])"
 
 	# Skip to the next line
 	PS1+="\n"
