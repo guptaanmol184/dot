@@ -754,7 +754,7 @@ function __setprompt
     #PS4='\[${DARKGRAY}\]($0:$LINENO) +\[${NOCOLOR}\] '
 }
 
-# if [ -z "$BASH_EXECUTION_STRING" ] && [ "$SHLVL" -eq 3 ]; then
-#     exec fish
-# fi
+if [ -z "$BASH_EXECUTION_STRING" ] && [ "$SHLVL" -eq 2 ]; then
+    exec fish
+fi
 
