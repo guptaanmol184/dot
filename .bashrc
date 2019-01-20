@@ -140,8 +140,8 @@ alias psyu='sudo pacman -Syu'
 
 # Youtube
 alias yt="youtube-dl --add-metadata -ic" # Download video link
-alias yta='yt --extract-audio --audio-format mp3 --output "%(title)s.%(ext)s"' # Download only audio
-alias ytp="yt -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'" # Download playlist with numbering
+alias yta="youtube-dl --extract-audio --audio-format mp3 --output '%(title)s.%(ext)s'" # Download only audio
+alias ytp="youtube-dl -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'" # Download playlist with numbering
 
 # Custom Alias's to some commands
 alias e="$EDITOR"
@@ -155,19 +155,20 @@ alias za='zathura --fork'
 alias g='git'
 alias cc='gcc -Wall'
 alias m='ncmpcpp'
+alias cat='bat'
 
 # dot files management aliases
 alias dot='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias dots='dot status'
-alias dota='dot add -p'
-alias dotc='dot commit -m'
-alias dotp='dot push origin'
-alias dotd='dot diff'
+alias dots='git --git-dir=$HOME/.cfg/ --work-tree=$HOME status'
+alias dota='git --git-dir=$HOME/.cfg/ --work-tree=$HOME add -p'
+alias dotc='git --git-dir=$HOME/.cfg/ --work-tree=$HOME commit -m'
+alias dotp='git --git-dir=$HOME/.cfg/ --work-tree=$HOME push origin'
+alias dotd='git --git-dir=$HOME/.cfg/ --work-tree=$HOME diff'
 alias gdot='sudo git --git-dir=/.dot/ --work-tree=/'
-alias gdots='gdot status'
-alias gdota='gdot add'
-alias gdotc='gdot commit -m'
-alias gdotp='gdot push origin'
+alias gdots='sudo git --git-dir=/.dot/ --work-tree=/ status'
+alias gdota='sudo git --git-dir=/.dot/ --work-tree=/ add'
+alias gdotc='sudo git --git-dir=/.dot/ --work-tree=/ commit -m'
+alias gdotp='sudo git --git-dir=/.dot/ --work-tree=/ push origin'
 
 # Change directory aliases
 alias home='cd ~'
@@ -250,7 +251,7 @@ alias unbz2='tar -xvjf'
 alias ungz='tar -xvzf'
 
 # Show all logs in /var/log
-alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
+# alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
 
 # SHA1
 alias sha1='openssl sha1'
