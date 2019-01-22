@@ -1,0 +1,2 @@
+#!/bin/bash
+grep '^alias' ~/.bashrc | sort | sed 's/alias/abbr/' | sed 's/=/ /' > ~/.config/fish/conf.d/abbr.fish
