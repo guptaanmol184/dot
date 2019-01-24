@@ -1,0 +1,6 @@
+set selection-clipboard clipboard
+
+# invert zathura color
+map <C-i> recolor "true"
+set recolor-reverse-video "true"
+
