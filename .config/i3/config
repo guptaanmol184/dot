@@ -60,10 +60,18 @@ bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!dropdowncalc|tmuxdd).*
 
 bindsym $mod+w		        exec --no-startup-id $BROWSER
 
-bindsym $mod+r 			exec $term -e ranger
+bindsym $mod+r 			    exec $term -e ranger
 
 bindsym $mod+t			    split toggle
 bindsym $mod+Shift+t		gaps inner current set 15; gaps outer current set 15
+
+bindsym $mod+Shift+y        exec --no-startup-id i3resize left
+
+bindsym $mod+Shift+u        exec --no-startup-id i3resize down
+
+bindsym $mod+Shift+i        exec --no-startup-id i3resize up
+
+bindsym $mod+Shift+o        exec --no-startup-id i3resize right
 
 bindsym $mod+s			    gaps inner current plus 5
 bindsym $mod+Shift+s		gaps inner current minus 5
