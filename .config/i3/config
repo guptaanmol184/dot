@@ -14,11 +14,13 @@ gaps outer 0
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
 set $alt Mod1
+set $filemanager thunar
 font pango:Source Code Pro 10
 workspace_layout tabbed
 workspace_auto_back_and_forth yes
 set $shutdown sudo -A shutdown -h now
 set $reboot sudo -A reboot
+set $hibernate sudo -A systemctl suspend
 
 # #---Starting External Scripts---# #
 # Setting the background:
@@ -50,13 +52,19 @@ bindsym $mod+Shift+space 	floating toggle
 bindsym $mod+space          focus mode_toggle
 
 bindsym $mod+Escape		    workspace prev
-bindsym $mod+Shift+Escape 	exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+Escape   exec --no-startup-id prompt "Exit i3?" "i3-msg exit"
 
 bindsym $mod+Shift+BackSpace exec --no-startup-id prompt "Reboot computer?" "$reboot"
 
 # #---Letter Key Bindings---# #
+## testing ##
+bindsym $mod+m bar mode toggle
+#############
+
 bindsym $mod+q			    [con_id="__focused__" instance="^(?!dropdowncalc|tmuxdd).*$"] kill
 bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!dropdowncalc|tmuxdd).*$"] kill
+
+bindsym $mod+e		        exec --no-startup-id $filemanager
 
 bindsym $mod+w		        exec --no-startup-id $BROWSER
 
@@ -150,6 +158,9 @@ bindsym $mod+Shift+7	move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8	move container to workspace $ws8; workspace $ws8
 bindsym $mod+Shift+9	move container to workspace $ws9; workspace $ws9
 bindsym $mod+Shift+0	move container to workspace $ws10; workspace $ws10
+
+# #---Function Buttons---# #
+bindsym $mod+F1         exec prompt "Hibernate computer?" "$hibernate"
 
 # #---Arrow Keys---# #
 bindsym $mod+Left		    focus left
