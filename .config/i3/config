@@ -174,8 +174,8 @@ bindsym $mod+Shift+Right 	move right
 
 # #---Extra XF86 Keys---# #
 # These are the extra media keys that some keyboards have.
-bindsym XF86AudioMute           exec "amixer -q sset Master,0 toggle"
-bindsym XF86AudioRaiseVolume    exec amixer set Master -q 5%+
-bindsym XF86AudioLowerVolume    exec amixer set Master -q 5%-
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 2%- unmute
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 2%+ unmute
+bindsym XF86AudioMute        exec --no-startup-id amixer -q set Master toggle
 bindsym XF86MonBrightnessDown   exec --no-startup-id "lux -s3%"
 bindsym XF86MonBrightnessUp     exec --no-startup-id "lux -a5%"
