@@ -27,7 +27,7 @@ fi
 # add this only after PROMPT_COMMAND is initialized
 # eval "$(fasd --init auto)"
 if [[ -f "$HOME/.fasd-init-bash" ]]; then
-    source .fasd-init-bash # use custom fasd-init so that we can set PROMPT_COMMAND properly, and capture last status
+    source "$HOME/.fasd-init-bash" # use custom fasd-init so that we can set PROMPT_COMMAND properly, and capture last status
 fi
 
 #######################################################
@@ -128,7 +128,9 @@ alias vi='vim'
 alias svi='sudo vi'
 alias vis='vim "+set si"'
 alias q='exit'
+alias sl='ls'
 alias cpu="grep 'cpu ' /proc/stat | awk '{usage=(\$2+\$4)*100/(\$2+\$4+\$5)} END {print usage}' | awk '{printf(\"%.1f\n\", \$1)}'"
+alias wl='wunderline'
 
 # pacman alias's
 alias p='pacman'
@@ -150,7 +152,7 @@ alias vim='nvim'
 alias g='git'
 alias wm='sudo wifi-menu'
 alias rfs='~/frozensynapse/runSynapse.sh'
-alias cn='sudo -A connman_dmenu'
+alias cn='sudo connman_dmenu'
 alias za='zathura --fork'
 alias g='git'
 alias cc='gcc -Wall'
