@@ -1,5 +1,8 @@
 # vim: filetype=i3config
-#
+
+# Based on file originally by Luke Smith
+# Github: https://github.com/LukeSmithxyz/
+
 # This config file will use environmental variables such as $BROWSER and $TERMINAL.
 # You can set these variables in ~/.profile or ~/.bash_profile if you have it as below:
 #
@@ -37,6 +40,8 @@ exec --no-startup-id redshift
 exec --no-startup-id mpd
 # musnify-mpd ~ mpd notification daemon
 exec --no-startup-id musnify-mpd
+# rescuetime
+exec --no-startup-id rescuetime
 
 # #---Bar Config---# #
 bar {
@@ -67,6 +72,7 @@ bindsym $mod+Shift+q		[con_id="__focused__" instance="^(?!dropdowncalc|tmuxdd).*
 bindsym $mod+e		        exec --no-startup-id $filemanager
 
 bindsym $mod+w		        exec --no-startup-id $BROWSER
+bindsym $mod+Shift+w        exec --no-startup-id wunderlistux
 
 bindsym $mod+r 			    exec $term -e ranger
 
