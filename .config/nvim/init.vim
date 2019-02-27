@@ -64,7 +64,7 @@
 	autocmd BufWritePost ~/.Xresources,~/.Xdefaults !xrdb %
 " Add shebang line to new python files and make them executable
 	"autocmd BufNewFile *.py silent !chmod +x <afile>
-    au BufNewFile *.py call append(0, '#/usr/bin/env python')
+    au BufNewFile *.py call append(0, '#!/usr/bin/env python')
 " Set scripts to be executable from the shell
   "au BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod +x <afile> | endif | endif
 
