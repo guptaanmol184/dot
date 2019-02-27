@@ -1,12 +1,29 @@
-let mapleader =" "
+" KEY MAPPINGS
+    let mapleader =" "
+    nnoremap <Leader>w :w<CR>
+    nnoremap <Leader>q :q<CR>
+    nnoremap <Leader>e :e $MYVIMRC<CR>
+    nnoremap <Leader>s :so $MYVIMRC<CR>
+    nnoremap ;; :w<CR>
+    map s <Plug>(easymotion-s)
+    " Go to the first non-blank character of a line
+    noremap 0 ^
+    " Just in case you need to go to the very beginning of a line
+    noremap ^ 0
+    " nmap <Leader>w :w<cr>
+    " nmap <Leader>s :source $MYVIMRC
+    " nmap <Leader>q :q
+    " nmap <Leader>c :e $MYVIMRC
+    :nnoremap <F5> "=strftime("[%c]")<CR>P
+    :inoremap <F5> <C-R>=strftime("[%c]")<CR>
 
 " Some basics:
 	set nocompatible
 	filetype plugin on
 	syntax on
 	set encoding=utf-8
-	set number relativenumber
-" Enable autocompletion:
+	set number
+" Enable wildmenu
 	set wildmenu
 	set wildmode=list:longest,full
 " Disable cursor styling because it messes up the cursor
@@ -45,10 +62,13 @@ let mapleader =" "
 	autocmd BufWritePost ~/.bmfiles,~/.bmdirs !shortcuts
 " Run xrdb whenever Xdefaults or Xresources are updated.
 	autocmd BufWritePost ~/.Xresources,~/.Xdefaults !xrdb %
+" Add shebang line to new python files and make them executable
+	"autocmd BufNewFile *.py silent !chmod +x <afile>
+    au BufNewFile *.py call append(0, '#/usr/bin/env python')
+" Set scripts to be executable from the shell
+  "au BufWritePost * if getline(1) =~ "^#!" | if getline(1) =~ "/bin/" | silent !chmod +x <afile> | endif | endif
 
 source ~/.config/nvim/plugs.vim    "plugins
 
 " GRAPHICAL OPTIONS
 	set background=dark
-    colorscheme xoria256
-
