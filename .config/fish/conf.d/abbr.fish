@@ -14,7 +14,7 @@ abbr .. 'cd ..'
 abbr cd.. 'cd ..'
 abbr checkcommand "type -t"
 abbr cls 'clear'
-abbr cn 'sudo -A connman_dmenu'
+abbr cn 'sudo connman_dmenu'
 abbr countfiles "for t in files links directories; do echo \`find . -type \${t:0:1} | wc -l\` \$t; done 2> /dev/null"
 abbr cp 'cp -i'
 abbr cpu "grep 'cpu ' /proc/stat | awk '{usage=(\$2+\$4)*100/(\$2+\$4+\$5)} END {print usage}' | awk '{printf(\"%.1f\n\", \$1)}'"
@@ -52,11 +52,12 @@ abbr lk 'ls -lSrh' # sort by size
 abbr ll 'ls -Fls' # long listing format
 abbr lm 'ls -alh |more' # pipe through 'more'
 abbr lr 'ls -lRh' # recursive ls
-abbr ls 'ls --color=auto' # add colors and file type extensions
+abbr ls 'lsd'
 abbr lt 'ls -ltrh' # sort by date
 abbr lu 'ls -lurh' # sort by access time
 abbr lw 'ls -xAh' # wide listing format
 abbr lx 'ls -lXBh' # sort by extension
+abbr md 'mkdir -p'
 abbr mkbz2 'tar -cvjf'
 abbr mkdir 'mkdir -p'
 abbr mkgz 'tar -cvzf'
@@ -85,6 +86,7 @@ abbr rm 'rm -iv'
 abbr sbrc 'source ~/.bashrc'
 abbr se "sudo $EDITOR"
 abbr sha1 'openssl sha1'
+abbr sl 'ls'
 abbr sp 'sudo pacman'
 abbr svi 'sudo vi'
 abbr topcpu "/bin/ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10"
@@ -98,6 +100,7 @@ abbr vis 'vim "+set si"'
 abbr vi 'vim'
 abbr web 'cd /var/www/html'
 abbr whatismyip "whatsmyip"
+abbr wl 'wunderline'
 abbr wm 'sudo wifi-menu'
 abbr yta "youtube-dl --extract-audio --audio-format mp3 --output '%(title)s.%(ext)s'" # Download only audio
 abbr ytp "youtube-dl -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s'" # Download playlist with numbering
