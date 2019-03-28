@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# a simple script to toggle the network interface
+
+if [ "$1" == "e" ]; then
+    status=$(cat /sys/class/net/eno1/operstate)
+    if [ "$status" == "up" ]; then
+        sudo ip link set eno1 down
+    else
+        sudo ip link set eno1 up
+    fi
+fi
+if [ "$1" == "w" ]; then
+    status=$(cat /sys/class/net/wlo1/operstate)
+    if [ "$status" == "up" ]; then
+        sudo ip link set wlo1 down
+    else
+        sudo ip link set wlo1 up
+    fi
+fi
