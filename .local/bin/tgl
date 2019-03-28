@@ -5,15 +5,19 @@ if [ "$1" == "e" ]; then
     status=$(cat /sys/class/net/eno1/operstate)
     if [ "$status" == "up" ]; then
         sudo ip link set eno1 down
+        echo "Successfully set eno1 DOWN"
     else
         sudo ip link set eno1 up
+        echo "Successfully set eno1 UP"
     fi
 fi
 if [ "$1" == "w" ]; then
     status=$(cat /sys/class/net/wlo1/operstate)
     if [ "$status" == "up" ]; then
         sudo ip link set wlo1 down
+        echo "Successfully set wlo1 DOWN"
     else
         sudo ip link set wlo1 up
+        echo "Successfully set wlo1 UP"
     fi
 fi
