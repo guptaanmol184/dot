@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# A small script to take a short break when switching between tasks
+# cbrk - coffee break
+
+if [ -n "$1" ]; then
+    sleep "$1"
+    flite -t 'Break Over' -l
+else
+    sleep 5m
+    flite -t 'Break Over' -l
+fi
+
