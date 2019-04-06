@@ -3,11 +3,13 @@
 # A small script to take a short break when switching between tasks
 # cbrk - coffee break
 
+exec 1>/dev/null 2>&1
+
 if [ -n "$1" ]; then
     sleep "$1"
-    flite -t 'Break Over' -l
+    play "$HOME/.local/.notif.ogg"
 else
     sleep 5m
-    flite -t 'Break Over' -l
+    play "$HOME/.local/.notif.ogg"
 fi
 
