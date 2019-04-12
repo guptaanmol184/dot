@@ -60,10 +60,14 @@ exec --no-startup-id musnify-mpd
 exec --no-startup-id rescuetime
 # Unclutter makes the mouse invisible after a brief period
 exec --no-startup-id unclutter
+# screenlocker
+exec --no-startup-id xautolock -time 3 -locker 'i3lock-next'
 
 # #---Bar Config---# #
 bar {
     status_command i3blocks
+    #status_command python -u /home/ag/playground/test.py
+    #status_command i3status
     font pango:Source Code Pro 10
     position top
     tray_padding 0
