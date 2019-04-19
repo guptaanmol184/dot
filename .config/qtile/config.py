@@ -117,6 +117,16 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
+def parse_funct(data):
+    return data["headers"]["user-agent"]
+
+# def parse_funct1(data):
+#     f = open('/home/ag/file', 'w')
+#     f.write('hello')
+#     f.write('###########################')
+#     f.write(json.dumps(data, indent=4))
+#     return "hello"
+
 #widget.Prompt(),
 screens = [
     Screen(
@@ -128,16 +138,17 @@ screens = [
                     text="◢", fontsize=50, padding=-1
                 ),
                 widget.GroupBox(
+                    # active='F6F6F6', inactive='968F92',
                     # other_current_screen_border=COLS["orange_0"],
                     # this_current_screen_border=COLS["blue_0"],
                     # this_current_screen_border=COLS["deus_2"],
                     # other_screen_border=COLS["orange_0"],
                     # this_screen_border=COLS["blue_0"],
                     # this_screen_border=COLS["deus_2"],
-                    highlight_color="#888888",
+                    highlight_color=['1A2024', '060A0F'],
                     # highlight_color=COLS["deus_2"],
                     # urgent_border=COLS["red_1"],
-                    background="#222222",
+                    background="222222",
                     # background=COLS["deus_3"],
                     highlight_method="line",
                     # inactive=COLS["dark_2"],
@@ -153,6 +164,16 @@ screens = [
                 #widget.WindowName(),
                 widget.TaskList(),
                 #widget.WindowTabs(),
+                widget.Sep(),
+
+                widget.GenPollUrl(
+                    url='http://postman-echo.com/get',
+                    parse = parse_funct,
+                    update_interval=600),
+                # widget.GenPollUrl(
+                #     url='http://postman-echo.com/post',
+                #     data=urlencode({'b': 'qtile'}).encode('ascii'),
+                #     parse = parse_funct1),
                 widget.Sep(),
 
                 widget.Systray(),
