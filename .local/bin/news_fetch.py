@@ -84,7 +84,7 @@ def log_error(e):
 
 if __name__ == '__main__':
     # global vars
-    today_date, today_month = datetime.now().strftime('%B-%d').split('-')
+    today_date, today_month, today_year = datetime.now().strftime('%B-%d-%Y').split('-')
     save_date = datetime.now().strftime('%Y%m%d')
 
     # download directory
@@ -105,7 +105,7 @@ if __name__ == '__main__':
     print('Trying to fetch hindu')
     ele = None
     for ptag in ptags:
-        if today_date in  ptag.text and today_month in ptag.text:
+        if today_date in  ptag.text and today_month in ptag.text and today_year not in ptag.text:
             ele = ptag
             break
 
@@ -132,7 +132,7 @@ if __name__ == '__main__':
     print('Trying to fetch indian express')
     ele = None
     for ptag in ptags:
-        if today_date in  ptag.text and today_month in ptag.text:
+        if today_date in  ptag.text and today_month in ptag.text and today_year not in ptag.text:
             ele = ptag
             break
 
