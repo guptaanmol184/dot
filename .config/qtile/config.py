@@ -111,14 +111,14 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font='sans',
-    fontsize=12,
+    font='SauceCodePro Nerd Font Mono',
+    fontsize=13,
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
 
 def parse_funct(data):
-    return data["headers"]["user-agent"]
+    return 'ॐ ' + data["headers"]["user-agent"]
 
 # def parse_funct1(data):
 #     f = open('/home/ag/file', 'w')
@@ -133,7 +133,7 @@ screens = [
         bottom=bar.Bar(
             [
                 widget.TextBox(
-                    font="Arial", foreground="#ffffff",background="222222",
+                    foreground="#ffffff",background="222222",
                     # font="Arial", foreground=COLS["deus_3"],
                     text="◢", fontsize=50, padding=-1
                 ),
@@ -202,7 +202,7 @@ screens = [
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
             ],
             24,
-            background = ["#000000", "#222222"]
+            background = "222222"
         ),
     ),
 ]
