@@ -130,39 +130,32 @@ def parse_funct(data):
 #widget.Prompt(),
 screens = [
     Screen(
-        bottom=bar.Bar(
+        top=bar.Bar(
             [
-                widget.TextBox(
-                    foreground="#ffffff",background="222222",
-                    # font="Arial", foreground=COLS["deus_3"],
-                    text="◢", fontsize=50, padding=-1
-                ),
+                # widget.TextBox(
+                #     foreground="#ffffff",background="222222",
+                #     # font="Arial", foreground=COLS["deus_3"],
+                #     text="◢", fontsize=50, padding=-1
+                # ),
                 widget.GroupBox(
                     # active='F6F6F6', inactive='968F92',
-                    # other_current_screen_border=COLS["orange_0"],
-                    # this_current_screen_border=COLS["blue_0"],
-                    # this_current_screen_border=COLS["deus_2"],
-                    # other_screen_border=COLS["orange_0"],
-                    # this_screen_border=COLS["blue_0"],
-                    # this_screen_border=COLS["deus_2"],
-                    highlight_color=['1A2024', '060A0F'],
-                    # highlight_color=COLS["deus_2"],
-                    # urgent_border=COLS["red_1"],
+                    # highlight_color=['1A2024', '060A0F'],
+                    highlight_color='060a0f',
                     background="222222",
-                    # background=COLS["deus_3"],
                     highlight_method="line",
-                    # inactive=COLS["dark_2"],
-                    # active=COLS["light_2"],
-                    # disable_drag=True,
                     borderwidth=2,
+                    centre_aligned=True,
+                    disable_drag=True,
+                    hide_unused=True,
                 ),
-                widget.TextBox(
-                    font="Arial", foreground="#ffffff",
-                    # font="Arial", foreground=COLS["deus_3"],
-                    text="◤ ", fontsize=50, padding=-5
-                ),
+                # widget.TextBox(
+                #     font="Arial", foreground="#ffffff",
+                #     # font="Arial", foreground=COLS["deus_3"],
+                #     text="◤ ", fontsize=50, padding=-5
+                # ),
                 #widget.WindowName(),
-                widget.TaskList(),
+                widget.TaskList(
+                    highlight_method='block'),
                 #widget.WindowTabs(),
                 widget.Sep(),
 
