@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-from libqtile.config import Key, Screen, Group, Drag, Click
+from libqtile.config import Key, Screen, Group, Drag, Click, DropDown, ScratchPad
 from libqtile.command import lazy
 from libqtile import layout, bar, widget, hook
 
@@ -72,6 +72,8 @@ keys = [
     Key([], 'Print',
         lazy.spawn('scrot -e \'mkdir -p ~/screenshots; mv $f ~/screenshots/\'')
         ),
+
+    # Key([alt], "Tab", lazy.screen.windows.group.next_window()),
 ]
 
 groups = [Group(i) for i in "123456"]
@@ -84,6 +86,29 @@ for i in groups:
         # mod1 + shift + letter of group = switch to & move focused window to group
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name)),
     ])
+groups.extend([
+    ScratchPad("scratchpad",
+        [
+            DropDown("calc", "kitty -o font_size=11 calc",
+                     x=0.6, y=0.1, width=0.39, height=0.8,
+                     opacity=0.9,
+                     on_focus_lost_hide=False),
+            DropDown("py", "kitty -o font_size=11 bpython",
+                     x=0.6, y=0.1, width=0.39, height=0.8,
+                     opacity=0.9,
+                     on_focus_lost_hide=True),
+            DropDown("browser", "qutebrowser",
+                     x=0.3, y=0.05, width=0.65, height=0.9,
+                     opacity=0.95,
+                     on_focus_lost_hide=True),
+        ]),
+])
+
+keys.extend([
+  Key([], 'F2', lazy.group['scratchpad'].dropdown_toggle('py')),
+  Key([], 'F5', lazy.group['scratchpad'].dropdown_toggle('calc')),
+  Key([], 'F10', lazy.group['scratchpad'].dropdown_toggle('browser')),
+])
 
 # layouts = [
 #     layout.Max(),
@@ -118,7 +143,8 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 def parse_funct(data):
-    return 'ॐ ' + data["headers"]["user-agent"]
+    # return 'ॐ ' + data["headers"]["user-agent"]
+    return data["headers"]["user-agent"] + '✨'
 
 # def parse_funct1(data):
 #     f = open('/home/ag/file', 'w')
