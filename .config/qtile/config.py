@@ -214,10 +214,14 @@ screens = [
                 widget.Pomodoro(),
                 widget.Sep(),
 
-                widget.Memory(),
-                widget.Sep(),
-                # widget.Net('wlo1'),
+                # widget.Memory(),
+                # widget.Sep(),
+
                 # widget.Net('eno1'),
+                # widget.Sep(),
+                widget.Net(interface='wlo1'),
+                widget.Sep(),
+
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
             ],
             24,
