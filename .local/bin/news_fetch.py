@@ -55,7 +55,8 @@ def simple_get(url):
     text content, otherwise return None.
     """
     try:
-        with closing(get(url, stream=True)) as resp:
+        headers={'User-Agent': 'Mozilla/5.0'}
+        with closing(get(url, stream=True, headers=headers)) as resp:
             if is_good_response(resp):
                 return resp.content
             else:
