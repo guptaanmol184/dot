@@ -62,7 +62,7 @@ def simple_get(url):
                 return None
 
     except RequestException as e:
-        log_error(f'Error during requests to {url} : {str(e)}')
+        print(f'Error during requests to {url} : {str(e)}')
         return None
 
 
@@ -70,21 +70,10 @@ def is_good_response(resp):
     """
     Returns True if the response seems to be HTML, False otherwise.
     """
-    # print(str(type(resp)))
-    # f = open('r.html', 'w')
-    # f.write(resp.text)
-    # f.close()
     content_type = resp.headers['Content-Type'].lower()
     return (resp.status_code == 200
             and content_type is not None
             and content_type.find('html') > -1)
-
-
-def log_error(e):
-    """
-    Log errors
-    """
-    print(e)
 
 if __name__ == '__main__':
     # global vars
