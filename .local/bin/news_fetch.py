@@ -62,7 +62,7 @@ def simple_get(url):
                 return None
 
     except RequestException as e:
-        log_error('Error during requests to {0} : {1}'.format(url, str(e)))
+        log_error(f'Error during requests to {url} : {str(e)}')
         return None
 
 
@@ -70,6 +70,10 @@ def is_good_response(resp):
     """
     Returns True if the response seems to be HTML, False otherwise.
     """
+    # print(str(type(resp)))
+    # f = open('r.html', 'w')
+    # f.write(resp.text)
+    # f.close()
     content_type = resp.headers['Content-Type'].lower()
     return (resp.status_code == 200
             and content_type is not None
@@ -114,9 +118,9 @@ if __name__ == '__main__':
             if 'Full' in atag.text:
                 dlink = atag['href']
                 file_id = dlink.split('/')[5]
-                destination = download_dir + '/{}-{}-{}-{}.pdf'.format(save_date, paper, today_month, today_date)
+                destination = download_dir + f'/{save_date}-{paper}-{today_month}-{today_date}.pdf'
                 download_file_from_google_drive(file_id, destination)
-        print('Successfully downloaded Hindu {} {}'.format(today_month, today_date))
+        print(f'Successfully downloaded Hindu {today_month} {today_date}')
     else:
         print('No relevant ptag found.')
 
@@ -139,8 +143,8 @@ if __name__ == '__main__':
     if ele:
         dlink = ele.find('a')['href']
         file_id = dlink.split('/')[5]
-        destination = download_dir + '/{}-{}-{}-{}.pdf'.format(save_date, paper, today_month, today_date)
+        destination = download_dir + f'/{save_date}-{paper}-{today_month}-{today_date}.pdf'
         download_file_from_google_drive(file_id, destination)
-        print('Successfully downloaded Indian Express {} {}'.format(today_month, today_date))
+        print(f'Successfully downloaded Indian Express {today_month} {today_date}')
     else:
         print('No relevant ptag found.')
