@@ -47,7 +47,8 @@ keys = [
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
     #Key([mod], "r", lazy.spawncmd()),
-    Key([mod], "d", lazy.spawn("rofi -modi run,window -terminal kitty -theme arthur -show run")),
+    # Key([mod], "d", lazy.spawn("rofi -modi run,window -terminal kitty -theme arthur -show run")),
+    Key([mod], "d", lazy.spawn("dmenu_run")),
     Key([mod], "w", lazy.spawn(browser)),
     Key([mod], "x", lazy.spawn("locker.sh")),
     Key([mod, "shift"], "x", lazy.spawn("xset dpms force off")),
@@ -105,7 +106,7 @@ groups.extend([
 ])
 
 keys.extend([
-  Key([], 'F2', lazy.group['scratchpad'].dropdown_toggle('py')),
+  Key([], 'F3', lazy.group['scratchpad'].dropdown_toggle('py')),
   Key([], 'F5', lazy.group['scratchpad'].dropdown_toggle('calc')),
   Key([], 'F10', lazy.group['scratchpad'].dropdown_toggle('browser')),
 ])
@@ -261,6 +262,7 @@ floating_layout = layout.Floating(float_rules=[
     {'wname': 'pinentry'},  # GPG key password entry
     {'wmclass': 'ssh-askpass'},  # ssh-askpass
     {'wmclass': 'nm-connection-editor'},  # nm-applet
+    {'wmclass': 'Xarchiver'},  # nm-applet
 ])
 auto_fullscreen = True
 focus_on_window_activation = "smart"
