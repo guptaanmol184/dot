@@ -14,8 +14,20 @@ from requests import get, Session
 from requests.exceptions import RequestException
 from contextlib import closing
 from bs4 import BeautifulSoup
+from selenium import webdriver
 from datetime import datetime
 from os import path, mkdir
+import time
+
+def notabot_scam():
+    '''
+    Scams the website by opening page and waiting for some time
+    into thinking i am not a bot, sinister 😈
+    '''
+    driver = webdriver.Firefox()
+    driver.get("http://www.bitul.in")
+    time.sleep(15)
+    driver.close()
 
 # Google drive file download
 def download_file_from_google_drive(id, destination):
@@ -77,6 +89,10 @@ def is_good_response(resp):
             and content_type.find('html') > -1)
 
 if __name__ == '__main__':
+
+    # try to make sure the website doesn't stop the script from running
+    notabot_scam()
+
     # global vars
     today_date, today_month, today_year = datetime.now().strftime('%B-%d-%Y').split('-')
     save_date = datetime.now().strftime('%Y%m%d')
