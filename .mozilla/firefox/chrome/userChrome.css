@@ -1,19 +1,41 @@
-/* Frank edited file - you are good to go...*/
-
 /*
- * Do not remove the @namespace line -- it's required for correct functioning
- */
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
+Example code:
+@import url("path/filename.css");
 
-/* https://news.ycombinator.com/item?id=18836189 */
-/* Hide tab bar in FF Quantum */
-@-moz-document url("chrome://browser/content/browser.xul") {
-    #TabsToolbar {
-        visibility: collapse !important;
-        margin-bottom: 21px !important;
-    }
+rules -
+@import url(chrome/tab_close_button_always_on_hover.css);
+@import url(chrome/tab_loading_progress_throbber.css);
+@import url(chrome/button_effect_scale_onclick.css);
 
-    #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
-        visibility: collapse !important;
-    }
+themes - 
+@import url(theme_color_variables.css);
+@import url(theme_sidebar.css);
+@import url(theme_toolbars.css);
+@import url(theme_popups_and_menus.css);
+*/
+
+
+/*@import url(firefox-csshacks-master/chrome/autohide_bookmarks_toolbar.css);*/
+/*
+@import url(firefox-csshacks-master/chrome/window_control_placeholder_support.css);
+@import url(firefox-csshacks-master/chrome/hide_tabs_toolbar.css);
+*/
+@import url(UserChrome-Tweaks-master/tabs/hide-tabs-windows.css);
+@import url(UserChrome-Tweaks-master/sidebar/sidebar-title-to-bottom.css);
+@import url(UserChrome-Tweaks-master/context-menu/dark-thin-context-menu.css);
+@import url(UserChrome-Tweaks-master/findbar/compact-findbar-on-top.css);
+@import url(UserChrome-Tweaks-master/navbar/sharpen-edges.css);
+@import url(UserChrome-Tweaks-master/navbar/remove-back-button-circle.css);
+@import url(UserChrome-Tweaks-master/navbar/red-addressbar-insecure.css);
+/*@import url(UserChrome-Tweaks/toolbars/roomy-bookmarks-toolbar.css);*/
+/*@import url(UserChrome-Tweaks/toolbars/hide-bookmark-confirmation-hint.css);*/
+/*@import url(UserChrome-Tweaks/toolbars/show-bookmarks-only-on-newtab.css);*/
+/* Don't work */
+/*@import url(UserChrome-Tweaks/toolbars/sliding-bookmarks-bar.css);*/
+/*@import url(UserChrome-Tweaks/toolbars/vertical-toolbar-left-side.css);*/
+
+/* reduce side bar header size*/
+#sidebar-header {
+    padding: 1px !important;
 }
+
