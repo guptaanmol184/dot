@@ -1,0 +1,102 @@
+{
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "update.mode": "start",
+    "extensions.autoUpdate": false,
+    "workbench.enableExperiments": false,
+    "extensions.ignoreRecommendations": false,
+    "workbench.colorTheme": "Visual Studio 2019 Dark",
+    "workbench.iconTheme": "vscode-icon-theme",
+    "editor.fontFamily": "'FiraCode NF', Consolas, 'Courier New', monospace",
+    "files.exclude": {
+        "**/*.meta": true
+    },
+    "search.exclude": {
+        "**/*.meta": true
+    },
+    "editor.fontLigatures": true,
+    "csharp.referencesCodeLens.enabled": false,
+    // vim settings
+    "vim.easymotion": true,
+    "vim.hlsearch": true,
+    "vim.incsearch": true,
+    "vim.leader": ";",
+    // vim readme settings
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "h"
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "w"
+            ],
+            "commands": [
+                "workbench.action.files.save"
+            ]
+        },
+        /*         {
+            "before": [
+                "<leader>",
+                "e"
+            ],
+            "commands": [
+                "editor.action.showHover"
+            ]
+        }, */
+        {
+            "before": [
+                "<leader>",
+                "q"
+            ],
+            "commands": [
+                "workbench.action.toggleSidebarVisibility"
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "s"
+            ],
+            "commands": [
+                "editor.action.sortLinesAscending"
+            ]
+        }
+    ],
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false
+    },
+    "vim.foldfix": true,
+    "todo-tree.tree.showScanModeButton": false,
+    "editor.minimap.renderCharacters": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "window.zoomLevel": -1,
+    "extensions.autoCheckUpdates": false,
+    "editor.formatOnSave": true,
+    // "editor.codeActionsOnSave": {
+    //     "source.organizeImports": true
+    // },
+    "editor.renderWhitespace": "boundary",
+    "zenMode.centerLayout": false,
+    "zenMode.hideLineNumbers": false,
+    "zenMode.hideTabs": false,
+    "files.associations": {
+        "*.ahk": "ahk"
+    },
+    // bracket pair coloriser
+    //"bracket-pair-colorizer-2.showBracketsInGutter": true,
+    //"bracket-pair-colorizer-2.showVerticalScopeLine": true,
+    //"bracket-pair-colorizer-2.showHorizontalScopeLine": true
+}
