@@ -19,6 +19,9 @@ PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | tr '\n' ':')"
 export PATH
 unset appendpath
 
+# https://consoledonottrack.com/
+export DO_NOT_TRACK=1
+
 # Adds `~/.scripts` and all subdirectories to $PATH
 export EDITOR="nvim"
 export VISUAL="nvim"
