@@ -3,6 +3,9 @@ iatest=$(expr index "$-" i)
 shopt -s autocd #Allows you to cd into directory merely by typing the directory name.
 PROMPT_COMMAND='__setprompt' # initialize this first
 
+# Activate vi mode with <Escape>:
+set -o vi
+
 #######################################################
 # SOURCED ALIAS'S AND SCRIPTS
 #######################################################
