@@ -160,6 +160,7 @@ alias m='ncmpcpp'
 alias cat='bat'
 
 # dot files management aliases
+# Source for dotfiles management setup: https://www.atlassian.com/git/tutorials/dotfiles
 alias dot='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias dots='git --git-dir=$HOME/.cfg/ --work-tree=$HOME status'
 alias dota='git --git-dir=$HOME/.cfg/ --work-tree=$HOME add -p'
