@@ -26,6 +26,7 @@ calc
 cantarell-fonts
 catfish
 chromedriver
+cockpit
 code
 coreutils
 cpulimit
