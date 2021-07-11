@@ -5,6 +5,7 @@ PROMPT_COMMAND='__setprompt' # initialize this first
 
 # Activate vi mode with <Escape>:
 set -o vi
+bind -m vi-insert "\C-l":clear-screen
 
 #######################################################
 # SOURCED ALIAS'S AND SCRIPTS
@@ -761,8 +762,3 @@ function __setprompt
 	# PS4 is used for tracing a script in debug mode
     #PS4='\[${DARKGRAY}\]($0:$LINENO) +\[${NOCOLOR}\] '
 }
-
-if [ -z "$BASH_EXECUTION_STRING" ] && [ "$SHLVL" -eq 2 ]; then
-    exec fish
-fi
-
