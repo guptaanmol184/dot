@@ -55,7 +55,9 @@ export QT_QPA_PLATFORMTHEME=gtk2
 echo "$0" | grep "bash$" >/dev/null && [ -f ~/.bashrc ] && source "$HOME/.bashrc"
 
 # Map caps lock to escape
-xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+if [[ "$DISPLAY" ]]; then
+    xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+fi
 
 # Start ssh-agent if not already running
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
