@@ -161,12 +161,12 @@ alias cat='bat'
 
 # dot files management aliases
 # Source for dotfiles management setup: https://www.atlassian.com/git/tutorials/dotfiles
-alias dot='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias dots='git --git-dir=$HOME/.cfg/ --work-tree=$HOME status'
-alias dota='git --git-dir=$HOME/.cfg/ --work-tree=$HOME add -p'
-alias dotc='git --git-dir=$HOME/.cfg/ --work-tree=$HOME commit -m'
-alias dotp='git --git-dir=$HOME/.cfg/ --work-tree=$HOME push origin'
-alias dotd='git --git-dir=$HOME/.cfg/ --work-tree=$HOME diff'
+alias dot='git --git-dir=$HOME/.dot/ --work-tree=$HOME'
+alias dots='git --git-dir=$HOME/.dot/ --work-tree=$HOME status'
+alias dota='git --git-dir=$HOME/.dot/ --work-tree=$HOME add -p'
+alias dotc='git --git-dir=$HOME/.dot/ --work-tree=$HOME commit -m'
+alias dotp='git --git-dir=$HOME/.dot/ --work-tree=$HOME push origin'
+alias dotd='git --git-dir=$HOME/.dot/ --work-tree=$HOME diff'
 alias gdot='sudo git --git-dir=/.dot/ --work-tree=/'
 alias gdots='sudo git --git-dir=/.dot/ --work-tree=/ status'
 alias gdota='sudo git --git-dir=/.dot/ --work-tree=/ add'
