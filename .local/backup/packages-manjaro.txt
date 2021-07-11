@@ -68,6 +68,7 @@ firefox
 fish
 flatpak
 freetype2
+fzf
 galculator-gtk2
 garcon
 gcc-libs
